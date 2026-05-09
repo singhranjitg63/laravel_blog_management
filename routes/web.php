@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Usercontroller;
-
+use App\Http\Controllers\Categorieconttroller;
 // login form route
 Route::get('/', function () {
     return view('welcome');
@@ -23,7 +23,8 @@ Route::get('/user', function () {
 Route::get('/usercreate', function () {
     return view('createUser');
 });
-Route::post('/user',[Usercontroller::class , 'add']);
+Route::post('user',[Usercontroller::class , 'addUser']);
+Route::get('list',[Usercontroller::class , 'listUser']);
 
 //blog table route 
 Route::get('/blog', function () {
@@ -37,6 +38,8 @@ Route::get('/blogcreate', function () {
 Route::get('/categories', function () {
     return view('Categories');
 });
-Route::get('/categoriescreate', function () {
-    return view('createCategories');
+Route::get('/categoriecreate', function () {
+    return view('createCategorie');
 });
+Route::post('categories',[Categorieconttroller::class, 'addCategorie']);
+

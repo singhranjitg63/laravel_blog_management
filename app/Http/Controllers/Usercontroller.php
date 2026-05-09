@@ -7,7 +7,7 @@ use App\Models\User;
 
 class Usercontroller extends Controller
 {
-    function add(Request $request){
+    function addUser(Request $request){
         $userData = new User();
         $userData->name=$request->name;
         $userData->email=$request->email;
