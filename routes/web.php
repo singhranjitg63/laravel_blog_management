@@ -1,31 +1,42 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Usercontroller;
 
+// login form route
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/newp',function() {
+Route::get('/newp', function () {
     return view('newpage');
 });
-Route::get('/home',function() {
+
+//home dashborde route
+Route::get('/home', function () {
     return view('Home');
 });
-Route::get('/blog',function() {
-    return view('Blog');
-});
-Route::get('/user',function() {
+
+//user table route
+Route::get('/user', function () {
     return view('User');
 });
-Route::get('/usercreate',function() {
+Route::get('/usercreate', function () {
     return view('createUser');
 });
-Route::get('/blogcreate',function() {
+Route::post('/user',[Usercontroller::class , 'add']);
+
+//blog table route 
+Route::get('/blog', function () {
+    return view('Blog');
+});
+Route::get('/blogcreate', function () {
     return view('createBlog');
 });
-Route::get('/categories',function() {
+
+//categories table route
+Route::get('/categories', function () {
     return view('Categories');
 });
-Route::get('/categoriescreate',function() {
+Route::get('/categoriescreate', function () {
     return view('createCategories');
 });

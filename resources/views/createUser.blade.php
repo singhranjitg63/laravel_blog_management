@@ -9,6 +9,7 @@
                             <div class="col-lg-12 mb-5 mb-lg-0">    
                                 <h4 class="mb-3">Create new user</h4>
                                 <form class="needs-validation" action="/user" method="post">
+                                   @csrf 
                                     <div class="row g-4">
                                         <div class="col-sm-12">
                                             <label for="name" class="form-label">Name</label>
@@ -33,7 +34,7 @@
 
                                         <hr class="my-4">
 
-                                        <button class="w-100 btn btn-primary btn-lg" type="submit">Create</button>
+                                        <button class="w-100 btn btn-primary btn-lg">Create</button>
                                     </div>
                                 </form>
                             </div>
@@ -43,7 +44,6 @@
             </section>
         </div>
     </div>
-            <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
     <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">&copy; 2026–2027 TED IT</p>
         <ul class="list-inline">

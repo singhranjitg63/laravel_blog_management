@@ -8,6 +8,7 @@
                             <div class="col-lg-12 mb-5 mb-lg-0">
                                 <h4 class="mb-3">Create new blogs</h4>
                                 <form class="needs-validation" action="/blog" method="post">
+                                     @csrf 
                                     <div class="row g-3">
                                         <div class="col-sm-6">
                                             <label for="title" class="form-label">Title</label>

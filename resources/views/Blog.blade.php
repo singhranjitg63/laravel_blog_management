@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="container">
-        <div class="d-flex justify-content-between">
+    <div class="container ">
+        <div class="d-flex justify-content-between ">
             <h2>Blogs Table</h2>
             <button class="btn btn-primary m-3"><a class="text-white" href="/blogcreate">Add new Blog</a></button>
         </div>
