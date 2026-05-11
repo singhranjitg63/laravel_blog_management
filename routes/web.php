@@ -18,17 +18,17 @@ Route::get('/home', function () {
 
 //user table route
 Route::get('/user', function () {
-    return view('User');
+    return view('Users');
 });
 Route::get('/usercreate', function () {
     return view('createUser');
 });
 Route::post('user',[Usercontroller::class , 'addUser']);
-Route::get('list',[Usercontroller::class , 'listUser']);
+Route::get('/user',[Usercontroller::class , 'listUser']);
 
 //blog table route 
 Route::get('/blog', function () {
-    return view('Blog');
+    return view('Blogs');
 });
 Route::get('/blogcreate', function () {
     return view('createBlog');

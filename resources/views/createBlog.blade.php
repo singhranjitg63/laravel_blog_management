@@ -25,7 +25,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="categories_id" class="form-label">categories id</label>
+                                            <label for="categories_id" class="form-label">Categories name</label>
                                             <input type="text" class="form-control" name="categories_id" id="categories_id">
                                         </div>
 

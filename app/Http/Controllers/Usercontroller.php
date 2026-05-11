@@ -13,9 +13,14 @@ class Usercontroller extends Controller
         $userData->email=$request->email;
         $userData->password=$request->password;
         $userData->role=$request->role;
+        
         $userData->save();
         if($userData){
             return "add the value in database";
         }
+    } 
+    function listUser(){
+        $listData = User::all();
+        return view('Users',['listing'=> $listData]);
     }
 }

@@ -8,7 +8,7 @@
           <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
         </form>
         <br>
-        <table class="table table-bordered">
+        <table class="table table-bordered" border="1">
             <thead>
                 <tr>
                     <th>Id.No</th>
@@ -18,8 +18,19 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
-                
+            <tbody >
+            @foreach($listing as $userlist)
+                <tr>
+                    <td>{{$userlist->id}}</td>
+                    <td>{{$userlist->name}}</td>
+                    <td>{{$userlist->email}}</td>
+                    <td>{{$userlist->role}}</td>
+                    <td>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>    
