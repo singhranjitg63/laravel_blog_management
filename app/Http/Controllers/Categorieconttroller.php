@@ -12,8 +12,12 @@ class Categorieconttroller extends Controller
         $categorieData->name = $request->name;
         $categorieData->save();
         if($categorieData){
-        return "add categorie in database";
+        return redirect('/categories');
         }
+    }
+    public function showCategorie(){
+        $showList = Categorie::all();
+        return view('Categories',['listing'=> $showList]);
     }
 
 }

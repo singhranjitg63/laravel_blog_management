@@ -42,4 +42,5 @@ Route::get('/categoriecreate', function () {
     return view('createCategorie');
 });
 Route::post('categories',[Categorieconttroller::class, 'addCategorie']);
+Route::get('/categories',[Categorieconttroller::class, 'showCategorie']);
 

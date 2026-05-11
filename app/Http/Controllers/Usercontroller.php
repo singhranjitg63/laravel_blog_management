@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Redirect;
 
 class Usercontroller extends Controller
 {
@@ -16,7 +17,7 @@ class Usercontroller extends Controller
         
         $userData->save();
         if($userData){
-            return "add the value in database";
+            return redirect('/user');
         }
     } 
     function listUser(){
