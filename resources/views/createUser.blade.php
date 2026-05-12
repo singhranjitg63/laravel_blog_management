@@ -8,10 +8,11 @@
                         <div class=" gx-lg-5 align-items-center">
                             <div class="col-lg-12 mb-5 mb-lg-0">    
                                 <h4 class="mb-3">Create new user</h4>
-                                <form class="needs-validation" action="/user" method="post">
+                                <form class="needs-validation" action="updateUser/{{$userlist->id}}" method="post">
                                    @csrf 
                                     <div class="row g-4">
                                         <div class="col-sm-12">
+                                            <input type="hidden" name="__METHOD" value="put">
                                             <label for="name" class="form-label">Name</label>
                                             <input type="text" name="name" class="form-control" id="firstName" value="">
                                         </div>
@@ -27,6 +28,7 @@
                                         <div class="col-12">
                                             <label for="role" class="form-label">Role</label>
                                             <select name="role" class="form-control" id="role">
+                                                <option value="" disabled selected>Select Role</option>
                                                 <option  value="subscriber">Subscriber</option>
                                                 <option  value="author">Author</option>
                                             </select>

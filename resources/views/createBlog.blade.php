@@ -8,11 +8,11 @@
                             <div class="col-lg-12 mb-5 mb-lg-0">
                                 <h4 class="mb-3">Create new blogs</h4>
                                 <form class="needs-validation" action="/blog" method="post">
-                                     @csrf 
+                                    @csrf
                                     <div class="row g-3">
                                         <div class="col-sm-6">
                                             <label for="title" class="form-label">Title</label>
-                                            <input type="text" name="title" class="form-control" id="firstName" placeholder="" value="" >
+                                            <input type="text" name="title" class="form-control" id="firstName" placeholder="" value="">
                                         </div>
                                         <div class="col-12">
                                             <label for="contant">Contant</label>
@@ -24,9 +24,17 @@
                                             <input type="text" class="form-control" name="user_id" id="user_id">
                                         </div>
 
-                                        <div class="col-12">
-                                            <label for="categories_id" class="form-label">Categories name</label>
-                                            <input type="text" class="form-control" name="categories_id" id="categories_id">
+                                        <div class="col-md-12">
+                                            <label class="form-label">Categorie name</label>
+                                            <select name="categorie_id" class="form-select">
+                                                <option value="" disabled selected>Select category</option>
+
+                                                @foreach($categories as $category)
+                                                <option value="{{ $category->id }}">
+                                                    {{ $category->name }}
+                                                </option>
+                                                @endforeach
+                                            </select>
                                         </div>
 
                                         <hr class="my-4">

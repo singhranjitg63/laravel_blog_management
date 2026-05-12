@@ -5,7 +5,7 @@
             <button class="btn btn-primary m-3"><a class="text-white" href="/usercreate">Add new User</a></button>
         </div>
         <form class="w-100 me-3">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
         </form>
         <br>
         <table class="table table-bordered" border="1">
@@ -18,8 +18,8 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody >
-            @foreach($listing as $userlist)
+            <tbody>
+                @foreach($listing as $userlist)
                 <tr>
                     <td>{{$userlist->id}}</td>
                     <td>{{$userlist->name}}</td>
@@ -27,11 +27,15 @@
                     <td>{{$userlist->role}}</td>
                     <td>
                         <button type="button" class="btn btn-warning">Edit</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <form action="{{ route('user.destroy', $userlist->id) }}" method="POST" style="display:inline-block" onsubmit="return confirm('Are You sure')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
-            @endforeach
+                @endforeach
             </tbody>
         </table>
-    </div>    
+    </div>
 </x-layout>

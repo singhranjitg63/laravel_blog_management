@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->string('titel');
+            $table->string('title');
             $table->text('contant');
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('categorie_id')->constrained('categories');

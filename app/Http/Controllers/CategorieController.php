@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Categorie;
 
-class Categorieconttroller extends Controller
+class CategorieController extends Controller
 {
     public function addCategorie(Request $request){
         $categorieData = new Categorie();
@@ -15,9 +15,12 @@ class Categorieconttroller extends Controller
         return redirect('/categories');
         }
     }
+
     public function showCategorie(){
         $showList = Categorie::all();
+        // $categorieData =     
         return view('Categories',['listing'=> $showList]);
     }
 
+  
 }
