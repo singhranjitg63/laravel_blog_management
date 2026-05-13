@@ -13,15 +13,18 @@
                                         <div class="col-sm-6">
                                             <label for="title" class="form-label">Title</label>
                                             <input type="text" name="title" class="form-control" id="firstName" placeholder="" value="">
+                                            <span class="text-danger">@error('title'){{$message}}@enderror</span>
                                         </div>
                                         <div class="col-12">
                                             <label for="contant">Contant</label>
                                             <textarea class="form-control" name="contant" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                            <span class="text-danger">@error('contant'){{$message}}@enderror</span>
                                         </div>
 
                                         <div class="col-12">
                                             <label for="user_id" class="form-label">User id</label>
                                             <input type="text" class="form-control" name="user_id" id="user_id">
+                                            <span class="text-danger">@error('user_id'){{$message}}@enderror</span>
                                         </div>
 
                                         <div class="col-md-12">

@@ -8,7 +8,13 @@ use App\Models\Categorie;
 class CategorieController extends Controller
 {
     public function addCategorie(Request $request){
+
+         $request->validate([
+            'name'=>'required',
+         ]);
+
         $categorieData = new Categorie();
+        
         $categorieData->name = $request->name;
         $categorieData->save();
         if($categorieData){

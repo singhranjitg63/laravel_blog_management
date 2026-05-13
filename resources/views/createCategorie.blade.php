@@ -11,8 +11,9 @@
                                      @csrf 
                                     <div class="row g-4">
                                         <div class="col-12">
-                                            <label for="contant">Name Categorie</label>
+                                            <label for="contant">Categorie name</label>
                                             <input type="text" class="form-control" name="name" id="categories_id">
+                                            <span class="text-danger">@error('name'){{$message}}@enderror</span>
                                         </div>
                                         <button class="w-100 btn btn-primary btn-lg" name="submit" type="submit">Submit</button>
                                     </div>
