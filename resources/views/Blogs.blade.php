@@ -20,7 +20,18 @@
                 </tr>
             </thead>
             <tbody>
-
+            @foreach($listBlog as $blogs)
+             <tr>
+                <td>{{ $loop-> iteration }}</td> 
+                <td>{{ $blogs->title }}</td>
+                <td>{{ $blogs->contant }}</td>
+                <td>{{ $blogs->user_id }}</td>
+                <td>{{ $blogs->Category->name ?? 'N\A' }}</td>
+                <td>
+                    <button type="button" class="btn btn-warning">Edit</button>
+                </td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>

@@ -21,7 +21,7 @@
             <tbody>
                 @foreach($listing as $userlist)
                 <tr>
-                    <td>{{$userlist->id}}</td>
+                    <td>{{$loop-> iteration }}</td> 
                     <td>{{$userlist->name}}</td>
                     <td>{{$userlist->email}}</td>
                     <td>{{$userlist->role}}</td>

@@ -30,7 +30,7 @@ class BlogController extends Controller
     }
     public function showBlog()
     {
-        $BlogData = Blog::all();
+        $BlogData = Blog::with('Category')->get();
         return view('Blogs', ['listBlog' => $BlogData]);
     }
 }

@@ -33,11 +33,13 @@ Route::delete('/user/{id}', [Usercontroller::class , 'destroy'])->name('user.des
 
 
 //blog table route 
-Route::get('/blog', function () {
-    return view('Blogs');
-});
+// Route::get('/blog', function () {
+//     return view('Blogs');
+// });
 Route::get('/blogcreate', [BlogController::class, "index"]);
 Route::post('/blog', [BlogController::class, "addBlog"]);
+Route::get('/blog',[BlogController::class , 'showBlog']);
+
 
 //categories table route
 Route::get('/categories', function () {
