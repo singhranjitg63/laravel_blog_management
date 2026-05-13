@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($listing as $userlist)
+                @forelse($listing as $userlist)
                 <tr>
                     <td>{{$loop-> iteration }}</td> 
                     <td>{{$userlist->name}}</td>
@@ -34,7 +34,11 @@
                         </form>
                     </td>
                 </tr>
-                @endforeach
+                @empty
+                <tr>
+                    <td colspan="5" class="text-center">Not data found</td>
+                </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

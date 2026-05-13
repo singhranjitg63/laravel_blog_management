@@ -10,24 +10,27 @@
                                 <h4 class="mb-3">Create new user</h4>
                                 <form class="needs-validation" action="" method="post">
                                    @csrf 
+                                   @method('POST')
                                     <div class="row g-4">
                                         <div class="col-sm-12">
-                                            <input type="hidden" name="__METHOD" value="put">
                                             <label for="name" class="form-label">Name</label>
                                             <input type="text" name="name" class="form-control" id="firstName" value="">
+                                            <span class="text-danger">@error('name'){{$message}}@enderror</span>
                                         </div>
                                         <div class="col-sm-12">
                                             <label for="email" class="form-label">Email</label>
                                             <input type="email" class="form-control" name="email" id="email" value="">
+                                            <span class="text-danger">@error('email'){{$message}}@enderror</span>
                                         </div>
 
                                         <div class="col-12">
                                             <label for="password" class="form-label">Password</label>
                                             <input type="password" class="form-control" name="password" id="password">
+                                            <span class="text-danger">@error('password'){{$message}}@enderror</span>
                                         </div>
                                         <div class="col-12">
                                             <label for="role" class="form-label">Role</label>
-                                            <select name="role" class="form-control" id="role">
+                                            <select name="role" class="form-control" id="role" >
                                                 <option value="" disabled selected>Select Role</option>
                                                 <option  value="subscriber">Subscriber</option>
                                                 <option  value="author">Author</option>

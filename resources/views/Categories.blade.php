@@ -17,7 +17,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($listing as $listshow)
+                @forelse($listing as $listshow)
                 <tr>
                     <td>{{$listshow->id}}</td>
                     <td>{{$listshow->name}}</td>
@@ -25,7 +25,11 @@
                         <button type="button" class="btn btn-warning">Edit</button>
                     </td>
                 </tr>
-                @endforeach
+                @empty
+                <tr>
+                    <td colspan="3" class="text-center">Not data found</td>
+                </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

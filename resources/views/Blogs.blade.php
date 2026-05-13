@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($listBlog as $blogs)
+            @forelse($listBlog as $blogs)
              <tr>
                 <td>{{ $loop-> iteration }}</td> 
                 <td>{{ $blogs->title }}</td>
@@ -31,7 +31,11 @@
                     <button type="button" class="btn btn-warning">Edit</button>
                 </td>
                 </tr>
-            @endforeach
+                @empty
+                <tr>
+                    <td colspan="6" class="text-center">Not data found</td>
+                </tr>
+            @endforelse
             </tbody>
         </table>
     </div>

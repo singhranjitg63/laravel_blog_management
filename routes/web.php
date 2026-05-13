@@ -27,7 +27,7 @@ Route::get('/user', function () {
 Route::get('/usercreate', function () {
     return view('createUser');
 });
-Route::post('user',[Usercontroller::class , 'addUser']);
+Route::post('/usercreate',[Usercontroller::class , 'addUser']);
 Route::get('/user',[Usercontroller::class , 'listUser']);
 Route::delete('/user/{id}', [Usercontroller::class , 'destroy'])->name('user.destroy');
 Route::get('/edit/{id}', [Usercontroller::class , 'edit'])->name('user.edit');

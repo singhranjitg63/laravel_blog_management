@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
+use Symfony\Contracts\Service\Attribute\Required;
 
 use function Laravel\Prompts\alert;
 
@@ -12,6 +13,12 @@ class Usercontroller extends Controller
 {
     function addUser(Request $request)
     {
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            'role'=>'required',
+        ]);
         $userData = new User();
         $userData->name = $request->name;
         $userData->email = $request->email;
