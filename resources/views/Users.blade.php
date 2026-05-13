@@ -26,7 +26,7 @@
                     <td>{{$userlist->email}}</td>
                     <td>{{$userlist->role}}</td>
                     <td>
-                        <button type="button" class="btn btn-warning">Edit</button>
+                        <a href="{{'edit/'.$userlist->id}}" class="btn btn-warning">Edit</a>
                         <form action="{{ route('user.destroy', $userlist->id) }}" method="POST" style="display:inline-block" onsubmit="return confirm('Are You sure')">
                             @csrf
                             @method('DELETE')

@@ -8,7 +8,7 @@
                         <div class=" gx-lg-5 align-items-center">
                             <div class="col-lg-12 mb-5 mb-lg-0">    
                                 <h4 class="mb-3">Create new user</h4>
-                                <form class="needs-validation" action="updateUser/{{$userlist->id}}" method="post">
+                                <form class="needs-validation" action="" method="post">
                                    @csrf 
                                     <div class="row g-4">
                                         <div class="col-sm-12">
