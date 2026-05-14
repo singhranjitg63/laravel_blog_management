@@ -23,10 +23,22 @@ class CategorieController extends Controller
     }
 
     public function showCategorie(){
-        $showList = Categorie::all();
-        // $categorieData =     
+        $showList = Categorie::paginate(4);    
         return view('Categories',['listing'=> $showList]);
     }
-
-  
+    public function editCategory($id){
+        $categorie = Categorie::find($id);
+        return view('createCategorie',['showCategory' => $categorie]);
+    }
+    public function updateCategory(Request $request,$id){
+        $categorie = Categorie::find($id);
+        $categorie->name = $request->name;
+        
+        if ($categorie->save()) {
+            return redirect('/categories');
+        }
+        else{
+            return "update operation failed";
+        }
+    }
 }

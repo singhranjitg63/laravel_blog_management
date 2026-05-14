@@ -41,5 +41,11 @@
                 @endforelse
             </tbody>
         </table>
+        {{$listing->links()}}
     </div>
 </x-layout>
+<style>
+    .w-5.h-5{
+        width: 25px
+    }
+</style>

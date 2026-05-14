@@ -22,7 +22,7 @@
                     <td>{{$listshow->id}}</td>
                     <td>{{$listshow->name}}</td>
                     <td>
-                        <button type="button" class="btn btn-warning">Edit</button>
+                         <a href="{{'editCategory/'.$listshow->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @empty
@@ -32,5 +32,11 @@
                 @endforelse
             </tbody>
         </table>
+        {{$listing->links()}}
     </div>
 </x-layout>
+<style>
+    .w-5.h-5{
+        width: 25px
+    }
+</style>

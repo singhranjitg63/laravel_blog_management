@@ -10,9 +10,6 @@ use App\Models\User;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/newp', function () {
-    return view('newpage');
-});
 
 //home dashborde route
 Route::get('/home', function () {
@@ -44,12 +41,14 @@ Route::get('/blog',[BlogController::class , 'showBlog']);
 
 
 //categories table route
-Route::get('/categories', function () {
-    return view('Categories');
-});
+// Route::get('/categories', function () {
+//     return view('Categories');
+// });
 Route::get('/categoriecreate', function () {
     return view('createCategorie');
 });
-Route::post('categories',[Categoriecontroller::class, 'addCategorie']);
+Route::post('/categories',[Categoriecontroller::class, 'addCategorie']);
 Route::get('/categories',[Categoriecontroller::class, 'showCategorie']);
+Route::get('/editCategory/{id}', [Categoriecontroller::class , 'editCategory'])->name('editCategory');
+Route::put('/updateCategory/{id}', [Categoriecontroller::class , 'updateCategory'])->name('updateCategory');
 

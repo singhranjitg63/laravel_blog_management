@@ -6,16 +6,45 @@
                     <div class="container">
                         <div class=" gx-lg-5 align-items-center">
                             <div class="col-lg-12 mb-5 mb-lg-0">
-                                <h4 class="mb-3">Create new Categorie</h4>
-                                <form class="needs-validation" action="/categories" method="POST">
-                                     @csrf 
+                                <h4 class="mb-3">
+                                    {{ isset($showCategory) ? 'Update Category' : 'Create New Category' }}
+                                </h4>
+
+                                <form class="needs-validation"
+                                    action="{{ isset($showCategory) ? url('/updateCategory/'.$showCategory->id) : url('/categories') }}"
+                                    method="POST">
+
+                                    @csrf
+
+                                    @if(isset($showCategory))
+                                    @method('PUT')
+                                    @endif
+
                                     <div class="row g-4">
+
                                         <div class="col-12">
-                                            <label for="contant">Categorie name</label>
-                                            <input type="text" class="form-control" name="name" id="categories_id">
-                                            <span class="text-danger">@error('name'){{$message}}@enderror</span>
+                                            <label for="categories_id">Category Name</label>
+
+                                            <input type="text"
+                                                class="form-control"
+                                                name="name"
+                                                id="categories_id"
+                                                value="{{ old('name', isset($showCategory) ? $showCategory->name : '') }}"
+                                                placeholder="Enter category name">
+
+                                            <span class="text-danger">
+                                                @error('name')
+                                                {{ $message }}
+                                                @enderror
+                                            </span>
                                         </div>
-                                        <button class="w-100 btn btn-primary btn-lg" name="submit" type="submit">Submit</button>
+
+                                        <div class="col-12">
+                                            <button class="w-100 btn btn-primary btn-lg" type="submit">
+                                                {{ isset($showCategory) ? 'Update Category' : 'Add Category' }}
+                                            </button>
+                                        </div>
+
                                     </div>
                                 </form>
                             </div>

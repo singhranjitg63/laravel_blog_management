@@ -32,7 +32,7 @@ class Usercontroller extends Controller
     }
     public function listUser()
     {
-        $listData = User::all();
+        $listData = User::paginate(2);
         return view('Users', ['listing' => $listData]);
     }
 
