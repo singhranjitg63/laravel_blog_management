@@ -9,42 +9,25 @@
                                 <h4 class="mb-3">
                                     {{ isset($showCategory) ? 'Update Category' : 'Create New Category' }}
                                 </h4>
-
                                 <form class="needs-validation"
                                     action="{{ isset($showCategory) ? url('/updateCategory/'.$showCategory->id) : url('/categories') }}"
                                     method="POST">
 
                                     @csrf
-
                                     @if(isset($showCategory))
                                     @method('PUT')
                                     @endif
-
                                     <div class="row g-4">
-
                                         <div class="col-12">
                                             <label for="categories_id">Category Name</label>
-
-                                            <input type="text"
-                                                class="form-control"
-                                                name="name"
-                                                id="categories_id"
-                                                value="{{ old('name', isset($showCategory) ? $showCategory->name : '') }}"
-                                                placeholder="Enter category name">
-
-                                            <span class="text-danger">
-                                                @error('name')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
+                                            <input type="text" class="form-control" name="name" id="categories_id" value="{{ old('name', isset($showCategory) ? $showCategory->name : '') }}" placeholder="Enter category name">
+                                            <span class="text-danger">@error('name'){{ $message }}@enderror</span>
                                         </div>
-
                                         <div class="col-12">
                                             <button class="w-100 btn btn-primary btn-lg" type="submit">
                                                 {{ isset($showCategory) ? 'Update Category' : 'Add Category' }}
                                             </button>
                                         </div>
-
                                     </div>
                                 </form>
                             </div>

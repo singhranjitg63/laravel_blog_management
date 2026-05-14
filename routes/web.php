@@ -29,6 +29,7 @@ Route::get('/user',[Usercontroller::class , 'listUser']);
 Route::delete('/user/{id}', [Usercontroller::class , 'destroy'])->name('user.destroy');
 Route::get('/edit/{id}', [Usercontroller::class , 'edit'])->name('user.edit');
 Route::put('/update/{id}', [Usercontroller::class , 'update'])->name('user.update');
+Route::get('/search',[Usercontroller::class , 'search']);
 
 
 //blog table route 
