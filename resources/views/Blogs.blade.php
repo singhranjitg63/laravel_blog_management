@@ -22,13 +22,13 @@
             <tbody>
             @forelse($listBlog as $blogs)
              <tr>
-                <td>{{ $loop-> iteration }}</td> 
+                <td>{{ $blogs->id }}</td> 
                 <td>{{ $blogs->title }}</td>
                 <td>{{ $blogs->contant }}</td>
                 <td>{{ $blogs->user_id }}</td>
                 <td>{{ $blogs->Category->name ?? '' }}</td>
                 <td>
-                    <button type="button" class="btn btn-warning">Edit</button>
+                    <a href="{{'editBlog/'.$blogs->id}}" class="btn btn-warning">Edit</a>
                 </td>
                 </tr>
                 @empty

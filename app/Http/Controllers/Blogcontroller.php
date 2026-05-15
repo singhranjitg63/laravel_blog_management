@@ -15,6 +15,7 @@ class BlogController extends Controller
         return view('createBlog', compact('categories'));
     }
 
+    //add new blog data in databade.
     public function addBlog(Request $request)
     {
         $request->validate([
@@ -34,9 +35,28 @@ class BlogController extends Controller
 
         return redirect('/blog');
     }
+
+    //show blog data 
     public function showBlog()
     {
         $BlogData = Blog::with('Category')->get();
         return view('Blogs', ['listBlog' => $BlogData]);
+    }
+
+    //update blog data
+    public function editBlog($id){
+        $blog = Blog::find($id);
+        return view('editBlog',['showBlog' => $blog]);
+    }
+    public function updateBlog(Request $request,$id){
+        $blog = Blog::find($id);
+        $blog->name = $request->name;
+        
+        if ($blog->save()) {
+            return redirect('/blog');
+        }
+        else{
+            return "update operation failed";
+        }
     }
 }

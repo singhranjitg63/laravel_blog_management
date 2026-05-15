@@ -66,7 +66,7 @@
               </a>
             </li>
             <li class="nav-item hover">
-              <a class="nav-link text-dark" href="/user">
+              <a class="nav-link text-dark" href="{{ route('users.index') }}">
                 <span data-feather="file"></span>
                 Users
               </a>
