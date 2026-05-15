@@ -22,7 +22,7 @@
                     <td>{{$listshow->id}}</td>
                     <td>{{$listshow->name}}</td>
                     <td>
-                         <a href="{{'editCategory/'.$listshow->id}}" class="btn btn-warning">Edit</a>
+                        <a href="{{'editCategory/'.$listshow->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @empty

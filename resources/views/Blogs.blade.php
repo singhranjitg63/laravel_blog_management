@@ -26,7 +26,7 @@
                 <td>{{ $blogs->title }}</td>
                 <td>{{ $blogs->contant }}</td>
                 <td>{{ $blogs->user_id }}</td>
-                <td>{{ $blogs->Category->name ?? 'N\A' }}</td>
+                <td>{{ $blogs->Category->name ?? '' }}</td>
                 <td>
                     <button type="button" class="btn btn-warning">Edit</button>
                 </td>

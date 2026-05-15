@@ -35,7 +35,7 @@ class Usercontroller extends Controller
     //function for show user list 
     public function listUser()
     {
-        $listData = User::paginate(2);
+        $listData = User::paginate(5);
         return view('Users', ['listing' => $listData]);
     }
 
@@ -72,7 +72,7 @@ class Usercontroller extends Controller
     //function for search user data 
      public function search(Request $request,){
         // return $request;
-        $searchUser = User::where('name','like',"%$request->search%")->paginate(2);
+        $searchUser = User::where('name','like',"%$request->search%")->paginate(5);
         return view('Users',['listing'=>$searchUser,'search'=>$request->search]);
      }
 }
